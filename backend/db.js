@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-const uri = "mongodb://127.0.0.1:27017/ComplainPortal";
+// const uri = "mongodb://127.0.0.1:27017/ComplainPortal";
+const uri = "mongodb+srv://pranavkumar0155:<password>@cluster0.l9kq4zp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 mongoose.connect(uri);
 
 const userSchema = mongoose.Schema({
