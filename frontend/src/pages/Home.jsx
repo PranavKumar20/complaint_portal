@@ -19,17 +19,18 @@ export const Home = () => {
         </div>
         <div className="mb-6">
           <p className="text-center lg:text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa in
-            inventore reprehenderit impedit, quia officia a commodi, maiores
-            accusamus quidem laboriosam magni, repudiandae aliquam dolor qui
-            repellendus consectetur quae beatae?
+            Feel free to share your thoughts with us. Whether it's a suggestion
+            for improvement, a problem you've encountered, or just a general
+            comment, we're here to listen. Our team is committed to addressing
+            your concerns promptly and finding solutions to ensure your
+            satisfaction.
           </p>
         </div>
         <div className="mb-6">
           <p className="text-center lg:text-left">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-            corrupti necessitatibus delectus laborum. Impedit dolor, saepe
-            facere repudiandae praesentium libero!
+            Your feedback matters to us, and we appreciate your contribution to
+            making our services better for everyone. Thank you for choosing to
+            voice your opinions through our Complaint Box.
           </p>
         </div>
       </div>

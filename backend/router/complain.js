@@ -1,5 +1,5 @@
 const express = require("express");
-const { Complains } = require("../db");
+const { Complains, Words } = require("../db");
 const { authMiddleware } = require("../middleware");
 const cloudinary = require("cloudinary").v2;
 const fileupload = require("express-fileupload");
@@ -48,6 +48,20 @@ router.post("/createcomplain", authMiddleware, async (req, res) => {
 
     console.log("Uploaded images:", uploadedImages);
 
+    // const words = await Words.find({});
+    // const complainText = req.body.title + " " + req.body.description;
+
+    // // Check if any of the words are present in the complain text
+    // const offendingWords = words.filter(({ word }) =>
+    //   complainText.toLowerCase().includes(word.toLowerCase())
+    // );
+
+    // if (offendingWords.length > 0) {
+    //   return res.status(400).json({
+    //     msg: "Complain contains offensive words: " + offendingWords.join(", "),
+    //   });
+    // }
+
     const complain = await Complains.create({
       title: req.body.title,
       description: req.body.description,
@@ -83,14 +97,13 @@ router.put("/updatecomplain/:complainid", authMiddleware, async (req, res) => {
         .json({ msg: "Complaint not found or unauthorized" });
     }
 
-    // Update only the provided fields
     for (const key in updateFields) {
       existingComplain[key] = updateFields[key];
     }
 
-    existingComplain.updatedAt = Date.now(); // Update updatedAt timestamp
+    existingComplain.updatedAt = Date.now();
 
-    await existingComplain.save(); // Save the updated complain
+    await existingComplain.save();
 
     res.json({ msg: "Complaint updated successfully" });
   } catch (error) {

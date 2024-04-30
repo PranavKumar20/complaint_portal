@@ -59,7 +59,7 @@ export const Words = () => {
         </div>
       </div>
       <div className="mb-4">
-        <div className="font-bold">Topics:</div>
+        <div className="font-bold">Words:</div>
         <div className="flex flex-wrap">
           {allWords.map((word) => (
             <ShowExtra key={word._id} label={word.word} />
